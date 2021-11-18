@@ -1,17 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 function CounterApp({ value }) {
-  //evento hadleAdd
+  const [counter, setCounter] = useState(0);
 
-  const hadleAdd = (e) => {
-    console.log(e);
+  //console.log(nombre, setNombre);
+
+  //1er forma
+  const hadleAdd = () => {
+    setCounter(counter + 1);
   };
+
+  //2da forma
+  /* const hadleAdd = () => {
+    setCounter((c) => c + 1);
+  }; */
 
   return (
     <>
       <h1>CounterApp</h1>
-      <h2>{value}</h2>
+      <h2>{counter}</h2>
 
       <button onClick={hadleAdd}>+1</button>
     </>
