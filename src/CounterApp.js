@@ -7,7 +7,7 @@ function CounterApp({ value = 10 }) {
   //console.log(nombre, setNombre);
 
   //1er forma
-  const hadleAdd = () => {
+  const handleAdd = () => {
     setCounter(counter + 1);
   };
   
@@ -37,7 +37,7 @@ function CounterApp({ value = 10 }) {
       <h1>CounterApp</h1>
       <h2>{counter}</h2>
 
-      <button onClick={hadleAdd}>+1</button>
+      <button onClick={handleAdd}>+1</button>
       <button onClick={reset}>Reset</button>
       <button onClick={decrement}>-1</button>
     </>
