@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-function CounterApp({ value }) {
-  const [counter, setCounter] = useState(0);
+function CounterApp({ value = 10 }) {
+  const [counter, setCounter] = useState( value );
 
   //console.log(nombre, setNombre);
 
@@ -10,6 +10,22 @@ function CounterApp({ value }) {
   const hadleAdd = () => {
     setCounter(counter + 1);
   };
+  
+  const decrement = () => {
+
+    let vble = counter - 1 
+    if(vble == -1){
+      vble = 0 ;
+    }
+    setCounter(vble);
+  };
+
+  const reset = () =>{
+    /* let counter = 0 ; */
+    //Llega un argumento a nuestro componente CounterApp , value= 10 
+    setCounter(value);
+
+  }
 
   //2da forma
   /* const hadleAdd = () => {
@@ -22,6 +38,8 @@ function CounterApp({ value }) {
       <h2>{counter}</h2>
 
       <button onClick={hadleAdd}>+1</button>
+      <button onClick={reset}>Reset</button>
+      <button onClick={decrement}>-1</button>
     </>
   );
 }
